@@ -3,6 +3,7 @@ import "./App.css";
 import Nav from "./Nav";
 import About from "./About";
 import Shop from "./Shop";
+import ItemDetail from "./ItemDetail";
 import  { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
                 {/* Used to be <About /> */}
                 <Route path="/about" component={About} /> 
                 {/* Used to be <Shop /> */}
-                <Route path="/shop" component={Shop} />
+                <Route path="/shop" exact component={Shop} />
+                {/* The component will be rendered out b/c we used :id */}
+                <Route path="/shop/:id" component={ItemDetail} />
             </Switch>
         </div>
     </Router>
